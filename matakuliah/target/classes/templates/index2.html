@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Registration page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div align="center" class="col-md-12">
+    <h2>Welcome to Matakuliah registration page</h2>
+    <div class="col-md-6">
+        <form action="#" method="post" th:action="@{/save-matakuliah}" th:object="${matakuliah}">
+            <div class="form-group">
+                <label for="matakuliah">Mata Kuliah:</label>
+                <input class="form-control" id="matakuliah" th:field="*{matakuliah}" type="text">
+                <p class="alert alert-danger" th:errors="*{matakuliah}" th:if="${#fields.hasErrors('matakuliah')}">
+            </div>
+            <div class="form-group">
+                <label for="kelasMatkul">Kelas:</label>
+                <input class="form-control" id="kelasMatkul" th:field="*{kelasMatkul}" type="text">
+                <p class="alert alert-danger" th:errors="*{kelasMatkul}" th:if="${#fields.hasErrors('kelasMatkul')}">
+            </div>
+            <div class="form-group">
+                <label for="sksMatkul">Kelas:</label>
+                <input class="form-control" id="sksMatkul" th:field="*{sksMatkul}" type="text">
+                <p class="alert alert-danger" th:errors="*{sksMatkul}" th:if="${#fields.hasErrors('sksMatkul')}">
+            </div>
+            <div class="form-group">
+                <label for="ruangKelas">Ruang:</label>
+                <input class="form-control" id="ruangKelas" th:field="*{ruangKelas}" type="text"/>
+                <p class="alert alert-danger" th:errors="*{ruangKelas}" th:if="${#fields.hasErrors('ruangKelas')}"></p>
+            </div>
+            <div class="form-group">
+                <label for="waktuMatkul">Waktu:</label>
+                <input class="form-control" id="waktuMatkul" th:field="*{waktuMatkul"} type="text">
+                <p class="alert alert-danger" th:errors="*{waktuMatkul}" th:if="${#fields.hasErrors('waktuMatkul')}">
+            </div>
+            <div class="form-group">
+                <label for="dosenMatkul">Dosen:</label>
+                <input class="form-control" id="dosenMatkul" th:field="*{dosenMatkul}" type="text">
+                <p class="alert alert-danger" th:errors="*{dosenMatkul}" th:if="${#fields.hasErrors('dosenMatkul')}">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

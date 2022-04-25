@@ -12,14 +12,14 @@
     <div class="col-md-6">
         <form action="#" method="post" th:action="@{/save-matakuliah}" th:object="${matakuliah}">
             <div class="form-group">
-                <label for="matakuliah">Mata Kuliah:</label>
-                <input class="form-control" id="matakuliah" th:field="*{matakuliah}" type="text">
-                <p class="alert alert-danger" th:errors="*{matakuliah}" th:if="${#fields.hasErrors('matakuliah')}">
+                <label for="kodeMatkul">Kode Mata Kuliah:</label>
+                <input class="form-control" id="kodeMatkul" th:field="*{kodeMatkul}" type="text">
+                <p class="alert alert-danger" th:errors="*{kodeMatkul}" th:if="${#fields.hasErrors('kodeMatkul')}">
             </div>
             <div class="form-group">
-                <label for="kelasMatkul">Kelas:</label>
-                <input class="form-control" id="kelasMatkul" th:field="*{kelasMatkul}" type="text">
-                <p class="alert alert-danger" th:errors="*{kelasMatkul}" th:if="${#fields.hasErrors('kelasMatkul')}">
+                <label for="namaMatkul">Nama Mata Kuliah:</label>
+                <input class="form-control" id="namaMatkul" th:field="*{namaMatkul}" type="text">
+                <p class="alert alert-danger" th:errors="*{namaMatkul}" th:if="${#fields.hasErrors('namaMatkul')}">
             </div>
             <div class="form-group">
                 <label for="sksMatkul">SKS:</label>

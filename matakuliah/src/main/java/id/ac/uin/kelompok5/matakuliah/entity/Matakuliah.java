@@ -11,19 +11,19 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "matakuliah")
+@Table(name = "matkul")
 public class Matakuliah {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotEmpty(message = "Nama Matkul is required")
-    @Column(nullable = false, name = "mata_kuliah")
-    private String matakuliah;
+    @NotEmpty(message = "Kode Matkul is required")
+    @Column(nullable = false, name = "kode_kuliah")
+    private String kodeMatkul;
 
-    @NotEmpty(message = "kelas is required")
-    @Column(nullable = false, name = "kelas_matkul")
-    private String kelasMatkul;
+    @NotEmpty(message = "nama is required")
+    @Column(nullable = false, name = "nama_matkul")
+    private String namaMatkul;
 
     @NotEmpty(message = "SKS is required")
     @Column(nullable = false, name = "sks_matkul")
@@ -40,20 +40,6 @@ public class Matakuliah {
     @NotEmpty(message = "dosen is required")
     @Column(nullable = false, name = "dosen_matkul")
     private String dosenMatkul;
-
-    @NotEmpty(message = "kategori is required")
-    @Column(nullable = false, name = "kategori_tugas")
-    private String kategoriTugas;
-
-    @NotEmpty(message = "deadline is required")
-    @Column(nullable = false, name = "deadline_tugas")
-    private String deadlineTugas;
-
-    @NotEmpty(message = "Deskripsi is required")
-    @Column(nullable = false, name = "deskripsi_tugas")
-    private String deskripsiTugas;
-
-
 
 }
 

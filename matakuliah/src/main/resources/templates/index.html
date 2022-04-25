@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Spring Boot CRUD Example</title>
+    <title>Jadwal Mata Kuliah</title>
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -17,12 +17,13 @@
 <body>
 <div class="container"><h2>MATA KULIAH</h2></div>
 <div class="container"><a class="btn btn-info" role="button" th:href="@{/create}">New</a></div>
+<div class="container"><a class="btn btn-sm btn-outline-secondary" href="@{/login}">Log Out</a></div>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>
+            <th scope="col">Kode Mata Kuliah</th>
             <th scope="col">Mata Kuliah</th>
-            <th scope="col">Kelas</th>
             <th scope="col">SKS</th>
             <th scope="col">Ruang</th>
             <th scope="col">Waktu</th>
@@ -32,8 +33,8 @@
         </thead>
         <tbody>
         <tr th:each="s : ${Matakuliah}">
-            <td scope="col" th:text="${s.matakuliah}"></td>
-            <td scope="col" th:text="${s.kelasMatkul}"></td>
+            <td scope="col" th:text="${s.kodeMatkul}"></td>
+            <td scope="col" th:text="${s.namaMatkul}"></td>
             <td scope="col" th:text="${s.sksMatkul}"></td>
             <td scope="col" th:text="${s.ruangMatkul}"></td>
             <td scope="col" th:text="${s.waktuMatkul}"></td>

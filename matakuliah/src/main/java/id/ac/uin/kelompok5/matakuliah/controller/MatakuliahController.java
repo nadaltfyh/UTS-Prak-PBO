@@ -2,7 +2,7 @@ package id.ac.uin.kelompok5.matakuliah.controller;
 
 import id.ac.uin.kelompok5.matakuliah.entity.Matakuliah;
 import id.ac.uin.kelompok5.matakuliah.exception.MatakuliahNotFoundException;
-import id.ac.uin.kelompok5.matakuliah.service.MatakuliahService;
+import id.ac.uin.kelompok5.matakuliah.service.framework.MatakuliahService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +21,12 @@ public class MatakuliahController {
         this.matakuliahService = matakuliahService;
     }
 
-    public List<Matakuliah> getAllMatakuliah() {
+    @GetMapping
+    public List<id.ac.uin.kelompok5.matakuliah.entity.Matakuliah> getAllMatakuliah() {
         return matakuliahService.getAllMatakuliah();
     }
 
+    @GetMapping(value = "/{id}")
     public Matakuliah getMatakuliahById(@PathVariable("id") @Min(1) Long id) {
         Matakuliah std = matakuliahService.findById(id)
                 .orElseThrow(() -> new MatakuliahNotFoundException("Mata kuliah with " + id + " is Not Found!"));
@@ -40,15 +42,12 @@ public class MatakuliahController {
     public Matakuliah updateMatakuliah(@PathVariable("id") @Min(1) Long id, @Valid @RequestBody Matakuliah newStd) {
         Matakuliah matakuliah = matakuliahService.findById(id)
                 .orElseThrow(() -> new MatakuliahNotFoundException("Mata kuliah with " + id + " is Not Found!"));
-        matakuliah.setMatakuliah(newStd.getMatakuliah());
-        matakuliah.setKelasMatkul(newStd.getKelasMatkul());
+        matakuliah.setKodeMatkul(newStd.getKodeMatkul());
+        matakuliah.setNamaMatkul(newStd.getNamaMatkul());
         matakuliah.setSksMatkul(newStd.getSksMatkul());
         matakuliah.setRuangMatkul(newStd.getRuangMatkul());
         matakuliah.setWaktuMatkul(newStd.getWaktuMatkul());
         matakuliah.setDosenMatkul(newStd.getDosenMatkul());
-        matakuliah.setDeadlineTugas(newStd.getDeadlineTugas());
-        matakuliah.setDeskripsiTugas(newStd.getDeskripsiTugas());
-        matakuliah.setKategoriTugas(newStd.getKategoriTugas());
         return matakuliahService.save(matakuliah);
     }
 

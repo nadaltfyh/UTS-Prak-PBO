@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Spring Boot CRUD Example</title>
+    <title>Jadwal Mata Kuliah</title>
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -28,44 +28,44 @@
                 <input th:field="*{id}" type="hidden"/>
 
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">Nama Mata kuliah:</label>
+                    <label class="col-sm-4 control-label">Kode Mata Kuliah:</label>
                     <div class="col-sm-8">
-                        <input class="form-control" th:field="*{matakuliah}" type="text" id="matakuliah" placeholder="Nama Matakuliah" required>
+                        <input class="form-control" th:field="*{kodeMatkul}" type="text" id="kodeMatkul" placeholder="Kode Mata Kuliah" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-4 control-label">Kelas:</label>
+                    <label class="col-sm-4 control-label">Nama Mata Kuliah:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" th:field="*{kelasMatkul}" type="text" id="kelasMatkul" placeholder="Kelas Matakuliah" required>
+                        <input class="form-control" th:field="*{namaMatkul}" type="text" id="namaMatkul" placeholder="Nama Matkul" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">SKS:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" th:field="*{sksMatkul}" type="text" id="sksMatkul" placeholder="sks Matakuliah" required>
+                        <input class="form-control" th:field="*{sksMatkul}" type="text" id="sksMatkul" placeholder="SKS Matkul" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Ruang:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" th:field="*{ruangMatkul}" type="text" id="ruangMatkul" placeholder="ruang matkul" required>
+                        <input class="form-control" th:field="*{ruangMatkul}" type="text" id="ruangMatkul" placeholder="Ruang Matkul" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Waktu:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" th:field="*{waktuMatkul}" type="text" id="waktuMatkul" placeholder="waktu matkul" required>
+                        <input class="form-control" th:field="*{waktuMatkul}" type="text" id="waktuMatkul" placeholder="Hari, jam" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Dosen:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" th:field="*{dosenMatkul}" type="text" id="dosenMatkul" placeholder="Dosen Matkul" required>
+                        <input class="form-control" th:field="*{dosenMatkul}" type="text" id="dosenMatkul" placeholder="Dosen Pengampu" required>
                     </div>
                 </div>
 
